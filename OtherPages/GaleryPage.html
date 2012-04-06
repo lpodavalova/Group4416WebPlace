@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+	<head>
+		<title>
+			КНИТУ им. А.Н.Туполева, ИТКиИ, ПМИ, группа 4416
+		</title>
+		<link rel="stylesheet" type="text/css" href="../Styles/style.css"/>
+	</head>
+	<body>
+		<div class="common">
+			<!--Шапка-->
+			<div class="header"></div>
+			<!--Навигация-->
+			<div class="navigation">
+				<div class="menu">
+					<a	href="../MainPage.html">
+						Главная
+					</a>	
+					<br/>
+					<a	href="NewsPage.html">
+						Новости
+					</a>	
+					<br/>
+					<a	href="ContactsPage.html">
+						Контакты
+					</a>
+					<br/>
+					<a	href="TimeTablePage.html">
+						Расписание
+					</a>
+					<br/>
+					<a	href="GaleryPage.html">
+						Фотогалерея
+					</a>
+				</div>
+			</div>					
+			<!--Основное поле-->
+			<div class="main">
+				<div style = "border: 0px; padding: 0px; margin: 0px; width: 620px;">
+				<img src="../Images/logo_kai.gif" alt="Логотип КАИ" width="252" height="130"/>
+				<br/>
+				<br/><br/>
+				</div>
+				<!--Галерея фотографий-->
+				<div class="common_galery">
+					<!--Контейнер для "большого" фото-->
+					<div class="BigPhoto">
+			
+						<!--prev-->
+						<div class="prev">
+							<img src="../Images/prev.png" alt="Предыдущее фото" width="64px" height="64px" onclick="ClickBigPrev()"/>
+						</div>
+
+						<!--"Большая" фотография-->
+						<div class="photo">
+							<img src="../Images/Question.gif" id="big" alt="Увеличенное фото" width="311px" height="345px"/>
+						</div>
+						
+						<!--next-->
+						<div class="next">
+							<img src="../Images/next.png" alt="Следующее фото" width="64px" height="64px" onclick="ClickBigNext()"/>
+						</div>
+						
+					</div>	
+					<!--Контейнер для "маленьких фото"-->
+					<div class="LittlePhoto">
+						<!--prev-->
+						<div class="prev">
+							<img src="../Images/prev.png" alt="Предыдущее фото" width="64" height="64"/>
+						</div>
+						
+						<!--По четыре "маленьких" фотографий-->
+						<div class="photo" id="gallery">
+
+						</div>
+						
+						<!--next-->
+						<div class="next">
+							<img src="../Images/next.png" alt="Следующее фото" width="64" height="64"/>
+						</div>
+					</div>
+				</div> 
+			</div>
+				
+			<br/><br/><br/><br/><br/><br/><br/>
+			Дополнительная информация:<br/>
+			E-mail: kai.4316@gmail.com<br/>
+			Номера телефонов перенесены в "Контакты" почтового ящика группы.<br/><br/>
+			Староста: Подавалова Ленуза<br/>
+			ICQ:580301897<br/>
+			Jabber: lenuza@jabber.ru<br/><br/>
+			Зам. старосты: Шакиров Ринас
+		</div>										
+		<script language="javascript">
+			// получаем данные в JSON формате
+			var items = {m1 : { id: "1", src: "vyacheslav.jpg", caption: "Шилов В."}, 
+						 m2 : { id: "2", src: "airat.jpg", caption: "Гиздатуллин А."},
+						 m3 : { id: "3", src: "ilnar.jpg", caption: "Галиев И."},
+						 m4 : { id: "4", src: "lenuza.jpg", caption: "Подавалова Л."},
+						 m5 : { id: "5", src: "rinas.jpg", caption: "Шакиров Р."},
+						 m6 : { id: "6", src: "vladimir.jpg", caption: "Зиновьев В."}};
+						 
+			var len;
+						 
+			var bigPhotoNumber = 1;
+			var littlePhotoNumber = 0;
+
+			function ClickBigPrev() {
+				if (bigPhotoNumber > 0)
+				{
+					bigPhotoNumber--;
+					var photo = document.getElementById('big');
+					photo.src = '../PhotoGalery/Photos/' + items['m' + bigPhotoNumber].src;
+				}
+			}
+			function ClickBigNext() {				
+				if (bigPhotoNumber < len-1)
+				{
+					bigPhotoNumber++;
+					var photo = document.getElementById('big');
+					photo.src = '../PhotoGalery/Photos/' + items['m' + bigPhotoNumber].src;
+				}
+			}
+				
+			// Объект MediaItem
+			function MediaItem() {		   
+				// свойство - уникальный идентификатор
+				this.id = 0;
+				// свойство - имя файла картинки
+				this.src = "";
+				// свойство - подпись
+				this.caption = "";
+
+				// свойство - контейнер, где лежит изображение
+				this.parentContainer = null;
+
+				// возвращает html Id для элемента, который содержит картинку и все остальное
+				this.getId = function() {
+					return "mediaItem_" + this.id;
+				}
+
+				// возвращает полный путь к картинке
+				this.getImageUrl = function() {
+					return "../PhotoGalery/Photos/" + this.src;
+				}
+				
+				// устанавливает свойство caption и вызывает MediaChanged
+				this.setCaption = function(newCaption) {
+					this.caption = newCaption;
+					this.mediaChanged();
+				}
+
+				// выводит в браузер картинку (создает новый элемент или обновляет предыдущий)
+				this.render = function(parentContainer) {
+
+					if (typeof parentContainer != 'nothing')
+						this.parentContainer = parentContainer;
+					var currentMedia = this;
+					var newDiv = document.getElementById(this.getId());
+					//if (typeof newDiv == 'nothing') -- не работает поскольку это HTML объект!
+					if (newDiv == null) 
+					{
+						newDiv = document.createElement('div');
+						newDiv.className = 'SmallPhoto';
+						newDiv.id = this.getId(); 
+						parentContainer.appendChild(newDiv);
+					}else
+					{
+						var children = newDiv.childNodes;
+						while(children.length) {  
+							newDiv.removeChild(children[0]);  
+						}  
+					}
+					newDiv.innerHTML = "<img src='" + this.getImageUrl() + "' alt='" + this.caption + "' width='100px'/>"; 
+				}
+
+				// условное событие которое возникает при изменении картинки или свойства. 
+				// Вызывает перерисовку и вызывает клиентский обработчик, если таковой имеется
+				this.mediaChanged = function() {
+					if (typeof this.parentContainer != 'nothing') {
+						this.render();
+					}
+					//this.OnMediaChanged();
+				}
+			}
+
+			// массив в котором содержаться все объекты картинки
+			var mediaItems = {};
+
+			// заполнение массива объектами
+			function bindObjects()
+			{
+				for (var m in items)
+				{
+					var _m = new MediaItem();
+					_m.id = items[m].id; 
+					_m.src = items[m].src;
+					_m.caption = items[m].caption;
+					mediaItems[_m.getId()] = _m;
+				}
+			}
+			
+			function countProperties(obj) {
+			  var prop;
+			  var propCount = 0;
+
+			  for (prop in obj) {
+				propCount++;
+			  }
+			  return propCount;
+			}
+
+			// прорисовка
+			function refreshView()
+			{
+				var photo = document.getElementById('big');
+				photo.src = '../PhotoGalery/Photos/' + items['m1'].src;
+				
+				len = countProperties(items);
+				bindObjects();
+
+				var container = document.getElementById('gallery');
+				
+				for (var m in mediaItems)
+				{
+					mediaItems[m].render(container);
+				}
+			}
+
+			refreshView();
+			
+		</script>
+	</body>
+<html>

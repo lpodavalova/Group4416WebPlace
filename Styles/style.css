@@ -1,0 +1,155 @@
+BODY {
+	background-color: #130C06;
+	color: #18100A;
+	text-align: center;
+	font-family: "Verdana", "Tahoma", "Sans Serif";
+	font-size: 10pt;
+	margin: 10px 10px 10px 10px
+}
+
+div.common {
+	width: 1020px;
+	margin: auto;
+	padding: 0;
+	border-style: none;
+	border-width: 0;	
+}
+
+div.header  {
+	width: 1000px;
+	height: 187px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url("../Images/header.png");
+	margin: 5px;
+	padding: 5px;
+}
+
+div.navigation {
+	float: left;
+	width: 250px;
+	height: 320px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url("../Images/navigation.png");
+	margin: 5px;
+	padding: 5px;
+}
+
+div.menu {
+	width: 210px;
+	height: 220px;
+	margin: 0;
+	padding: 50px 20px;
+	font-size: 14pt;
+	font-style: italic;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link {
+	color: #18100A;
+}
+
+a:hover {
+	color: #A38769;
+}
+a:visited {
+	color: #433122;
+}
+
+div.main {
+	float: right;
+	width: 620px;
+	height: 933px;
+	margin: 5px;
+	padding: 60px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url("../Images/main.png");
+}
+
+table, tr, td, th {
+	text-align: center;	
+	border-color: #130C06;
+	border-collapse: separate;
+	border-width: 1px;
+	border-style: solid;
+}
+div.common_galery {
+	width: 620px;
+	margin: 0;
+	padding: 0;
+}
+
+div.BigPhoto {
+	width: 620px;
+	margin: 0;
+	padding: 0;
+	float: none;
+	display: block;
+}
+
+div.LittlePhoto {
+	width: 620px;
+	height: auto;
+	margin: auto;
+	padding: 0;
+	float: none;
+	display: 
+	block;
+	text-align: center;
+	vertical-align: middle;
+}
+
+div.next{
+	float: right;
+	width: 64px;
+	height: auto;
+	border: 0px;
+	margin: auto;
+	padding: 0px;
+	display: inline;
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+div.prev {
+	float: left;
+	width: 64px;
+	height: auto;
+	border: 0px;
+	margin: auto;
+	padding: 0px;
+	display: inline;
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+div.photo {
+	float: none;
+	width: 492px;
+	height: auto;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+div.SmallPhoto {
+	float: none;
+	width: 100px;
+	height: auto;
+	border: 0px;
+	margin: 0px;
+	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+}
