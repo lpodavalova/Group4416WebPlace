@@ -127,7 +127,13 @@
 			function ClickLittlePrev(){
 				if (littlePhotoNumber > 3)
 				{
-					
+					littlePhotoNumber = littlePhotoNumber - (littlePhotoNumber % 4);
+					for (var i = 3; i >= 0; i--)
+					{
+						var photo = document.getElementById('img'+i);
+						photo.src = '../PhotoGalery/Photos/' + items['m' + littlePhotoNumber].src;
+						littlePhotoNumber--;
+					}
 				}
 			}
 			
