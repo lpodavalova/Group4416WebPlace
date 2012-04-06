@@ -67,7 +67,7 @@
 					<div class="LittlePhoto">
 						<!--prev-->
 						<div class="prev">
-							<img src="../Images/prev.png" alt="Предыдущее фото" width="64" height="64"/>
+							<img src="../Images/prev.png" alt="Предыдущее фото" width="64" height="64" onclick="ClickLittlePrev()"/>
 						</div>
 						
 						<!--По четыре "маленьких" фотографий-->
@@ -77,13 +77,13 @@
 						
 						<!--next-->
 						<div class="next">
-							<img src="../Images/next.png" alt="Следующее фото" width="64" height="64"/>
+							<img src="../Images/next.png" alt="Следующее фото" width="64" height="64" onclick="ClickLittleNext()"/>
 						</div>
 					</div>
 				</div> 
 			</div>
 				
-			<br/><br/><br/><br/><br/><br/><br/>
+			<br/><br/>
 			Дополнительная информация:<br/>
 			E-mail: kai.4316@gmail.com<br/>
 			Номера телефонов перенесены в "Контакты" почтового ящика группы.<br/><br/>
@@ -115,7 +115,7 @@
 				}
 			}
 			function ClickBigNext() {				
-				if (bigPhotoNumber < len-1)
+				if (bigPhotoNumber < len)
 				{
 					bigPhotoNumber++;
 					var photo = document.getElementById('big');
@@ -123,6 +123,43 @@
 				}
 			}
 				
+				
+			function ClickLittlePrev(){
+				if (littlePhotoNumber > 3)
+				{
+					
+				}
+			}
+			
+			function ClickLittleNext(){
+				if (littlePhotoNumber < len)
+				{
+					
+					if ((len - littlePhotoNumber) >= 4)
+						for (var i = 0; i < 4; i++)
+						{
+							littlePhotoNumber++;
+							var photo = document.getElementById('img'+i);
+							photo.src = '../PhotoGalery/Photos/' + items['m' + littlePhotoNumber].src;
+						}					
+					else
+					{
+						for (var i = 0; i < (len % 4); i++)
+						{
+							littlePhotoNumber++;
+							var photo = document.getElementById('img'+i);
+							photo.src = '../PhotoGalery/Photos/' + items['m' + littlePhotoNumber].src;
+						}
+						for (var i = (len % 4); i < 4; i++)
+						{
+							var photo = document.getElementById('img'+i);
+							photo.src = '../PhotoGalery/Images/Question.gif';
+						}
+					}
+				}
+			}
+			
+			
 			// Объект MediaItem
 			function MediaItem() {		   
 				// свойство - уникальный идентификатор
@@ -152,8 +189,8 @@
 				}
 
 				// выводит в браузер картинку (создает новый элемент или обновляет предыдущий)
-				this.render = function(parentContainer) {
-
+				this.render = function(parentContainer, id) {
+					littlePhotoNumber++;
 					if (typeof parentContainer != 'nothing')
 						this.parentContainer = parentContainer;
 					var currentMedia = this;
@@ -172,7 +209,7 @@
 							newDiv.removeChild(children[0]);  
 						}  
 					}
-					newDiv.innerHTML = "<img src='" + this.getImageUrl() + "' alt='" + this.caption + "' width='100px'/>"; 
+					newDiv.innerHTML = "<img src='" + this.getImageUrl() + "' alt='" + this.caption + "' id='" + id + "' width='100px' />"; 
 				}
 
 				// условное событие которое возникает при изменении картинки или свойства. 
@@ -222,9 +259,12 @@
 
 				var container = document.getElementById('gallery');
 				
+				var i = 0;
 				for (var m in mediaItems)
 				{
-					mediaItems[m].render(container);
+					if (i < 4)
+						mediaItems[m].render(container, 'img'+i);
+					i++;
 				}
 			}
 
