@@ -3,103 +3,103 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
 	<head>
 		<title>
-			КНИТУ им. А.Н.Туполева, ИТКиИ, ПМИ, группа 4416
+			РљРќРРўРЈ РёРј. Рђ.Рќ.РўСѓРїРѕР»РµРІР°, РРўРљРёР, РџРњР, РіСЂСѓРїРїР° 4416
 		</title>
 		<link rel="stylesheet" type="text/css" href="../Styles/style.css"/>
 	</head>
 	<body>
 		<div class="common">
-			<!--Шапка-->
+			<!--РЁР°РїРєР°-->
 			<div class="header"></div>
-			<!--Навигация-->
+			<!--РќР°РІРёРіР°С†РёСЏ-->
 			<div class="navigation">
 				<div class="menu">
 					<a	href="../MainPage.html">
-						Главная
+						Р“Р»Р°РІРЅР°СЏ
 					</a>	
 					<br/>
 					<a	href="NewsPage.html">
-						Новости
+						РќРѕРІРѕСЃС‚Рё
 					</a>	
 					<br/>
 					<a	href="ContactsPage.html">
-						Контакты
+						РљРѕРЅС‚Р°РєС‚С‹
 					</a>
 					<br/>
 					<a	href="TimeTablePage.html">
-						Расписание
+						Р Р°СЃРїРёСЃР°РЅРёРµ
 					</a>
 					<br/>
 					<a	href="GaleryPage.html">
-						Фотогалерея
+						Р¤РѕС‚РѕРіР°Р»РµСЂРµСЏ
 					</a>
 				</div>
 			</div>					
-			<!--Основное поле-->
+			<!--РћСЃРЅРѕРІРЅРѕРµ РїРѕР»Рµ-->
 			<div class="main">
 				<div style = "border: 0px; padding: 0px; margin: 0px; width: 620px;">
-				<img src="../Images/logo_kai.gif" alt="Логотип КАИ" width="252" height="130"/>
+				<img src="../Images/logo_kai.gif" alt="Р›РѕРіРѕС‚РёРї РљРђР" width="252" height="130"/>
 				<br/>
 				<br/><br/>
 				</div>
-				<!--Галерея фотографий-->
+				<!--Р“Р°Р»РµСЂРµСЏ С„РѕС‚РѕРіСЂР°С„РёР№-->
 				<div class="common_galery">
-					<!--Контейнер для "большого" фото-->
+					<!--РљРѕРЅС‚РµР№РЅРµСЂ РґР»СЏ "Р±РѕР»СЊС€РѕРіРѕ" С„РѕС‚Рѕ-->
 					<div class="BigPhoto">
 			
 						<!--prev-->
 						<div class="prev">
-							<img src="../Images/prev.png" alt="Предыдущее фото" width="64px" height="64px" onclick="ClickBigPrev()"/>
+							<img src="../Images/prev.png" alt="РџСЂРµРґС‹РґСѓС‰РµРµ С„РѕС‚Рѕ" width="64px" height="64px" onclick="ClickBigPrev()"/>
 						</div>
 
-						<!--"Большая" фотография-->
+						<!--"Р‘РѕР»СЊС€Р°СЏ" С„РѕС‚РѕРіСЂР°С„РёСЏ-->
 						<div class="photo">
-							<img src="../Images/Question.gif" id="big" alt="Увеличенное фото" width="311px" height="345px"/>
+							<img src="../Images/Question.gif" id="big" alt="РЈРІРµР»РёС‡РµРЅРЅРѕРµ С„РѕС‚Рѕ" width="311px" height="345px"/>
 						</div>
 						
 						<!--next-->
 						<div class="next">
-							<img src="../Images/next.png" alt="Следующее фото" width="64px" height="64px" onclick="ClickBigNext()"/>
+							<img src="../Images/next.png" alt="РЎР»РµРґСѓСЋС‰РµРµ С„РѕС‚Рѕ" width="64px" height="64px" onclick="ClickBigNext()"/>
 						</div>
 						
 					</div>	
-					<!--Контейнер для "маленьких фото"-->
+					<!--РљРѕРЅС‚РµР№РЅРµСЂ РґР»СЏ "РјР°Р»РµРЅСЊРєРёС… С„РѕС‚Рѕ"-->
 					<div class="LittlePhoto">
 						<!--prev-->
 						<div class="prev">
-							<img src="../Images/prev.png" alt="Предыдущее фото" width="64" height="64" onclick="ClickLittlePrev()"/>
+							<img src="../Images/prev.png" alt="РџСЂРµРґС‹РґСѓС‰РµРµ С„РѕС‚Рѕ" width="64" height="64" onclick="ClickLittlePrev()"/>
 						</div>
 						
-						<!--По четыре "маленьких" фотографий-->
+						<!--РџРѕ С‡РµС‚С‹СЂРµ "РјР°Р»РµРЅСЊРєРёС…" С„РѕС‚РѕРіСЂР°С„РёР№-->
 						<div class="photo" id="gallery">
 
 						</div>
 						
 						<!--next-->
 						<div class="next">
-							<img src="../Images/next.png" alt="Следующее фото" width="64" height="64" onclick="ClickLittleNext()"/>
+							<img src="../Images/next.png" alt="РЎР»РµРґСѓСЋС‰РµРµ С„РѕС‚Рѕ" width="64" height="64" onclick="ClickLittleNext()"/>
 						</div>
 					</div>
 				</div> 
 			</div>
 				
 			<br/><br/>
-			Дополнительная информация:<br/>
+			Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ:<br/>
 			E-mail: kai.4316@gmail.com<br/>
-			Номера телефонов перенесены в "Контакты" почтового ящика группы.<br/><br/>
-			Староста: Подавалова Ленуза<br/>
+			РќРѕРјРµСЂР° С‚РµР»РµС„РѕРЅРѕРІ РїРµСЂРµРЅРµСЃРµРЅС‹ РІ "РљРѕРЅС‚Р°РєС‚С‹" РїРѕС‡С‚РѕРІРѕРіРѕ СЏС‰РёРєР° РіСЂСѓРїРїС‹.<br/><br/>
+			РЎС‚Р°СЂРѕСЃС‚Р°: РџРѕРґР°РІР°Р»РѕРІР° Р›РµРЅСѓР·Р°<br/>
 			ICQ:580301897<br/>
 			Jabber: lenuza@jabber.ru<br/><br/>
-			Зам. старосты: Шакиров Ринас
+			Р—Р°Рј. СЃС‚Р°СЂРѕСЃС‚С‹: РЁР°РєРёСЂРѕРІ Р РёРЅР°СЃ
 		</div>										
 		<script language="javascript">
-			// получаем данные в JSON формате
-			var items = {m1 : { id: "1", src: "vyacheslav.jpg", caption: "Шилов В."}, 
-						 m2 : { id: "2", src: "airat.jpg", caption: "Гиздатуллин А."},
-						 m3 : { id: "3", src: "ilnar.jpg", caption: "Галиев И."},
-						 m4 : { id: "4", src: "lenuza.jpg", caption: "Подавалова Л."},
-						 m5 : { id: "5", src: "rinas.jpg", caption: "Шакиров Р."},
-						 m6 : { id: "6", src: "vladimir.jpg", caption: "Зиновьев В."}};
+			// РїРѕР»СѓС‡Р°РµРј РґР°РЅРЅС‹Рµ РІ JSON С„РѕСЂРјР°С‚Рµ
+			var items = {m1 : { id: "1", src: "vyacheslav.jpg", caption: "РЁРёР»РѕРІ Р’."}, 
+						 m2 : { id: "2", src: "airat.jpg", caption: "Р“РёР·РґР°С‚СѓР»Р»РёРЅ Рђ."},
+						 m3 : { id: "3", src: "ilnar.jpg", caption: "Р“Р°Р»РёРµРІ Р."},
+						 m4 : { id: "4", src: "lenuza.jpg", caption: "РџРѕРґР°РІР°Р»РѕРІР° Р›."},
+						 m5 : { id: "5", src: "rinas.jpg", caption: "РЁР°РєРёСЂРѕРІ Р ."},
+						 m6 : { id: "6", src: "vladimir.jpg", caption: "Р—РёРЅРѕРІСЊРµРІ Р’."}};
 						 
 			var len;
 						 
@@ -166,42 +166,42 @@
 			}
 			
 			
-			// Объект MediaItem
+			// РћР±СЉРµРєС‚ MediaItem
 			function MediaItem() {		   
-				// свойство - уникальный идентификатор
+				// СЃРІРѕР№СЃС‚РІРѕ - СѓРЅРёРєР°Р»СЊРЅС‹Р№ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
 				this.id = 0;
-				// свойство - имя файла картинки
+				// СЃРІРѕР№СЃС‚РІРѕ - РёРјСЏ С„Р°Р№Р»Р° РєР°СЂС‚РёРЅРєРё
 				this.src = "";
-				// свойство - подпись
+				// СЃРІРѕР№СЃС‚РІРѕ - РїРѕРґРїРёСЃСЊ
 				this.caption = "";
 
-				// свойство - контейнер, где лежит изображение
+				// СЃРІРѕР№СЃС‚РІРѕ - РєРѕРЅС‚РµР№РЅРµСЂ, РіРґРµ Р»РµР¶РёС‚ РёР·РѕР±СЂР°Р¶РµРЅРёРµ
 				this.parentContainer = null;
 
-				// возвращает html Id для элемента, который содержит картинку и все остальное
+				// РІРѕР·РІСЂР°С‰Р°РµС‚ html Id РґР»СЏ СЌР»РµРјРµРЅС‚Р°, РєРѕС‚РѕСЂС‹Р№ СЃРѕРґРµСЂР¶РёС‚ РєР°СЂС‚РёРЅРєСѓ Рё РІСЃРµ РѕСЃС‚Р°Р»СЊРЅРѕРµ
 				this.getId = function() {
 					return "mediaItem_" + this.id;
 				}
 
-				// возвращает полный путь к картинке
+				// РІРѕР·РІСЂР°С‰Р°РµС‚ РїРѕР»РЅС‹Р№ РїСѓС‚СЊ Рє РєР°СЂС‚РёРЅРєРµ
 				this.getImageUrl = function() {
 					return "../PhotoGalery/Photos/" + this.src;
 				}
 				
-				// устанавливает свойство caption и вызывает MediaChanged
+				// СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ СЃРІРѕР№СЃС‚РІРѕ caption Рё РІС‹Р·С‹РІР°РµС‚ MediaChanged
 				this.setCaption = function(newCaption) {
 					this.caption = newCaption;
 					this.mediaChanged();
 				}
 
-				// выводит в браузер картинку (создает новый элемент или обновляет предыдущий)
+				// РІС‹РІРѕРґРёС‚ РІ Р±СЂР°СѓР·РµСЂ РєР°СЂС‚РёРЅРєСѓ (СЃРѕР·РґР°РµС‚ РЅРѕРІС‹Р№ СЌР»РµРјРµРЅС‚ РёР»Рё РѕР±РЅРѕРІР»СЏРµС‚ РїСЂРµРґС‹РґСѓС‰РёР№)
 				this.render = function(parentContainer, id) {
 					littlePhotoNumber++;
 					if (typeof parentContainer != 'nothing')
 						this.parentContainer = parentContainer;
 					var currentMedia = this;
 					var newDiv = document.getElementById(this.getId());
-					//if (typeof newDiv == 'nothing') -- не работает поскольку это HTML объект!
+					//if (typeof newDiv == 'nothing') -- РЅРµ СЂР°Р±РѕС‚Р°РµС‚ РїРѕСЃРєРѕР»СЊРєСѓ СЌС‚Рѕ HTML РѕР±СЉРµРєС‚!
 					if (newDiv == null) 
 					{
 						newDiv = document.createElement('div');
@@ -218,8 +218,8 @@
 					newDiv.innerHTML = "<img src='" + this.getImageUrl() + "' alt='" + this.caption + "' id='" + id + "' width='100px' />"; 
 				}
 
-				// условное событие которое возникает при изменении картинки или свойства. 
-				// Вызывает перерисовку и вызывает клиентский обработчик, если таковой имеется
+				// СѓСЃР»РѕРІРЅРѕРµ СЃРѕР±С‹С‚РёРµ РєРѕС‚РѕСЂРѕРµ РІРѕР·РЅРёРєР°РµС‚ РїСЂРё РёР·РјРµРЅРµРЅРёРё РєР°СЂС‚РёРЅРєРё РёР»Рё СЃРІРѕР№СЃС‚РІР°. 
+				// Р’С‹Р·С‹РІР°РµС‚ РїРµСЂРµСЂРёСЃРѕРІРєСѓ Рё РІС‹Р·С‹РІР°РµС‚ РєР»РёРµРЅС‚СЃРєРёР№ РѕР±СЂР°Р±РѕС‚С‡РёРє, РµСЃР»Рё С‚Р°РєРѕРІРѕР№ РёРјРµРµС‚СЃСЏ
 				this.mediaChanged = function() {
 					if (typeof this.parentContainer != 'nothing') {
 						this.render();
@@ -228,10 +228,10 @@
 				}
 			}
 
-			// массив в котором содержаться все объекты картинки
+			// РјР°СЃСЃРёРІ РІ РєРѕС‚РѕСЂРѕРј СЃРѕРґРµСЂР¶Р°С‚СЊСЃСЏ РІСЃРµ РѕР±СЉРµРєС‚С‹ РєР°СЂС‚РёРЅРєРё
 			var mediaItems = {};
 
-			// заполнение массива объектами
+			// Р·Р°РїРѕР»РЅРµРЅРёРµ РјР°СЃСЃРёРІР° РѕР±СЉРµРєС‚Р°РјРё
 			function bindObjects()
 			{
 				for (var m in items)
@@ -254,7 +254,7 @@
 			  return propCount;
 			}
 
-			// прорисовка
+			// РїСЂРѕСЂРёСЃРѕРІРєР°
 			function refreshView()
 			{
 				var photo = document.getElementById('big');
